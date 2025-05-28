@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Ejercicio Complejo 1: Formulario con Validación</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            color: #913b01; /* Primary color */
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: -10px;
+            margin-bottom: 5px;
+        }
+        button {
+            background-color: #17408B; /* Accent color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #000; /* Secondary color */
+        }
+        .success-message {
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>React Ejercicio Complejo 1: Formulario con Validación</h1>
+        <div id="react-app-root"></div>
+    </div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function FormularioContacto() {
+            const [formData, setFormData] = useState({
+                nombre: '',
+                email: '',
+                mensaje: ''
+            });
+            const [errors, setErrors] = useState({});
+            const [submitted, setSubmitted] = useState(false);
+
+            const handleChange = (e) => {
+                const { name, value } = e.target;
+                setFormData({
+                    ...formData,
+                    [name]: value
+                });
+                // Clear error for the field as user types
+                if (errors[name]) {
+                    setErrors({
+                        ...errors,
+                        [name]: ''
+                    });
+                }
+            };
+
+            const validate = () => {
+                let tempErrors = {};
+                if (!formData.nombre) tempErrors.nombre = 'El nombre es requerido.';
+                if (!formData.email) {
+                    tempErrors.email = 'El email es requerido.';
+                } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+                    tempErrors.email = 'El email no es válido.';
+                }
+                if (!formData.mensaje) tempErrors.mensaje = 'El mensaje es requerido.';
+                setErrors(tempErrors);
+                return Object.keys(tempErrors).length === 0;
+            };
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                if (validate()) {
+                    console.log('Formulario enviado:', formData);
+                    setSubmitted(true);
+                    setFormData({ nombre: '', email: '', mensaje: '' }); // Clear form
+                    setErrors({}); // Clear any remaining errors
+                } else {
+                    setSubmitted(false);
+                }
+            };
+
+            return (
+                <div>
+                    {submitted ? (
+                        <p className="success-message">¡Gracias por tu mensaje! Nos pondremos en contacto pronto.</p>
+                    ) : (
+                        <form onSubmit={handleSubmit}>
+                            <div>
+                                <label htmlFor="nombre">Nombre:</label>
+                                <input
+                                    type="text"
+                                    id="nombre"
+                                    name="nombre"
+                                    value={formData.nombre}
+                                    onChange={handleChange}
+                                />
+                                {errors.nombre && <p className="error">{errors.nombre}</p>}
+                            </div>
+                            <div>
+                                <label htmlFor="email">Email:</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                />
+                                {errors.email && <p className="error">{errors.email}</p>}
+                            </div>
+                            <div>
+                                <label htmlFor="mensaje">Mensaje:</label>
+                                <textarea
+                                    id="mensaje"
+                                    name="mensaje"
+                                    rows="5"
+                                    value={formData.mensaje}
+                                    onChange={handleChange}
+                                ></textarea>
+                                {errors.mensaje && <p className="error">{errors.mensaje}</p>}
+                            </div>
+                            <button type="submit">Enviar Mensaje</button>
+                        </form>
+                    )}
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('react-app-root')).render(
+            <FormularioContacto />
+        );
+    </script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 2</title>
+    <link rel="stylesheet" href="Sem_2.css">
+</head>
+<body>
+
+    <button id="scrollToTopBtn" class="btn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99;">
+        ⬆️ Subir
+    </button>
+    
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="basketball-decoration"></div>
+            <span>Semana 2</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../index.html#about">Sobre Mí</a></li>
+            <li><a href="../index.html#projects">Proyectos</a></li>
+            <li><a href="../index.html#weeks">Semanas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Encabezado de la página -->
+    <header class="page-header">
+        <h1>Semana 2: Uso de Visual Studio Code</h1>
+        <h3>¿Qué hemos aprendido?</h3><br>
+        <p>Esta semana, hemos dominado el uso eficiente de Visual Studio Code. 
+            Centramos nuestra práctica en Emmet, un plugin que agiliza la creación 
+            de código HTML con abreviaciones, y en los atajos de teclado de VSCode, 
+            herramientas clave para aumentar la productividad en el desarrollo.</p>
+    </header>
+
+    <div class="container">
+        <!-- Contenido principal de la semana -->
+        <div class="week-content">
+            <!-- Información general de la semana -->
+            <div class="week-info">
+                <div class="info-card">
+                    <h3>Objetivos de Aprendizaje</h3>
+                    <ul>
+                        <li>Dominar la interfaz y configuración básica de VS Code.</li>
+                        <li>Aprender a usar Emmet para generar código HTML</li>
+                        <li>Aplicar atajos de teclado de VS Code para optimizar el flujo de trabajo</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Tecnologías Utilizadas</h3>
+                    <ul>
+                        <li>Visual Studio Code</li>
+                        <li>Atajos de teclado nativos de VS Code</li>
+                    </ul>
+                </div>
+            </div>
+
+           <div class="image-container">
+                <img src="imgsem2.jpg" alt="Imagen de la semana" class="imgsem1">
+            </div>
+
+            <!-- Ejercicios realizados -->
+            <h2 class="section-title">Ejercicios</h2>
+            
+
+            <div class="ejercicios-container">
+                <!-- Ejercicio 1 -->
+                <div class="ejercicio-item">
+                    <h3>Ejercicio 1</h3>
+                    <p>nav.nav>ul>li*4>a[href="page$@-.html"]{Link$@-}</p>
+                    <nav class="nav-ejercicio">
+                        <ul>
+                            <li><a href="Sem_1.html#ejercicios-item">Link4</a></li>
+                            <li><a href="Sem_1.html#ejercicios-item">Link3</a></li>
+                            <li><a href="Sem_1.html#ejercicios-item">Link2</a></li>
+                            <li><a href="Sem_1.html#ejercicios-item">Link1</a></li>
+                        </ul>
+                    </nav>
+            </div>
+            
+            <div class="ejercicio-item">
+                <h3>Ejercicio 2</h3>
+                <p>table.table>(thead>tr>th[scope=col]{ # }+th[scope=col]{First}+th[scope=col]{Second}+th[scope=col]{Tree})+(tbody>tr*3>th[scope=row]{$}+td{Mark}+td{Otto}+td{Jhonson})</p>
+                <table class="table-ejercicio">
+                    <thead>
+                        <tr>
+                            <th scope="col"> # </th>
+                            <th scope="col">First</th>
+                            <th scope="col">Second</th>
+                            <th scope="col">Tree</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Jhonson</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Jhonson</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Jhonson</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="ejercicio-item">
+                <h3>Ejercicio 3</h3>
+                <p>div.container>header#header{header}+nav#nav{nav}+section#section{section}+article#article{article}+aside#aside{aside}+footer#footer{footer}</p>
+                <div class="container-ejercicio">
+                    <header id="header-ejercicio">header</header>
+                    <nav id="nav-ejercicio">nav</nav>
+                    <section id="section-ejercicio">section</section>
+                    <article id="article-ejercicio">article</article>
+                    <aside id="aside-ejercicio">aside</aside>
+                    <footer id="footer-ejercicio">footer</footer>
+                </div>
+            </div>
+            
+            <!-- Ejercicio 4 -->
+            <div class="ejercicio-item" id="ejercicio4-container">
+                <h3>Ejercicio 4</h3>
+                <p>table>(thead>tr>th#id{id}+th#nombres{nombres}+th#apellidos{apellidos}+th#direccion{direccion})+(tbody>tr*20>td{$}+td{nombre$}+td{apellido$}+td{dirección$})</p>
+                <div class="table-scroll">
+                    <table class="big-table">
+                        <thead>
+                            <tr>
+                                <th id="id">id</th>
+                                <th id="nombres">nombres</th>
+                                <th id="apellidos">apellidos</th>
+                                <th id="direccion">direccion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Filas de la tabla (20) -->
+                            <tr><td>1</td><td>nombre1</td><td>apellido1</td><td>dirección1</td></tr>
+                            <tr><td>2</td><td>nombre2</td><td>apellido2</td><td>dirección2</td></tr>
+                            <tr><td>.....</td><td>.....</td><td>.......</td><td>......</td></tr>
+                            <tr><td>20</td><td>nombre20</td><td>apellido20</td><td>dirección20</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Ejercicio 5 -->
+            <div class="ejercicio-item" id="ejercicio5-container">
+                <h3>Ejercicio 5</h3>
+                <p>table>tr*20>td#fila$@-{fila$@-}+td{contenido$@-}</p>
+                <table class="row-table">
+                    <tr><td id="fila20">fila20</td><td>contenido20</td></tr>
+                    <tr><td id="fila19">fila19</td><td>contenido19</td></tr>
+                    <tr><td id="fila19">.......</td><td>.........</td></tr>
+                    <tr><td id="fila1">fila1</td><td>contenido1</td></tr>
+                </table>
+            </div>
+            
+            <!-- Ejercicio 6 -->
+            <div class="ejercicio-item">
+                <h3>Ejercicio 6</h3>
+                <p>div.card>img[src="perfil.jpg" alt="Foto de perfil"]+h2{Alexis}+p{Desarrollador Web}+ul.redes>li*3>a[href="#"]{Red Social$}</p>
+                <div class="card-ejercicio">
+                    <img src="../Perfil.jpg" alt="Foto de perfil" onerror="this.src='https://via.placeholder.com/150'">
+                    <h2>Alexis</h2>
+                    <p>Desarrollador Web</p>
+                    <ul class="redes-ejercicio">
+                        <li><a href="#">Social1</a></li>
+                        <li><a href="#">Social2</a></li>
+                        <li><a href="#">Social3</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            
+            <!-- Conclusion  -->
+
+            <h2 class="section-title">Conclusión</h2>
+            <div class="reflection">
+                <p>El uso de codigos Emmet, atajos de teclado y otras herramientas en Visual Studio Code mejoran la eficiencia de como podemos
+                    escribir el código. Practicar cada una de estas nuevas habilidades adquiridas, pueden ser relevantes en el mundo laboral
+                    donde el tiempo y la calidad son uno de los activos mas preciados. 
+                </p>
+            </div>
+
+            
+
+            <!-- Reflexión personal -->
+            <h2 class="section-title">Reflexión </h2>
+            <div class="reflection">
+                <p>Seguiré perfeccionando mi uso de Visual Studio Code mediante la práctica constante
+                     y el aprovechamiento de herramientas como Emmet, lo que me permitirá desarrollar 
+                        proyectos web con mayor rapidez, precisión y eficiencia.
+                </p>
+            </div>
+
+
+            <h2 class="section-title">Recursos Utilizados</h2>
+            <div class="resources">
+                <ul>
+                    <li class="recurso-link">
+                        <a href="https://github.com/jsuasnabar2000/DAW2025-1/blob/master/Semana1/sem01.md" class="recurso-btn">
+                          <i class="fab fa-github"></i> Repositorio del Ing. Jaime Suasnábar Terrel
+                        </a>
+                        <span class="recurso-desc">- Contiene ejemplos de atajos en VSC</span>
+                    </li>
+
+                    <li class="recurso-link">
+                        <a href="https://code.visualstudio.com/docs/languages/emmet" class="recurso-btn">
+                          <i class="fab fa-github"></i> Documentación de Código Emmet en Visual Studio Code
+                        </a>
+                        <span class="recurso-desc">- Contiene explicación de Emmet en VSC</span>
+                    </li>
+
+                    <li class="recurso-link">
+                        <a href="https://docs.emmet.io/cheat-sheet/" class="recurso-btn">
+                          <i class="fab fa-github"></i> Ejemplos de códigos Emmet
+                        </a>
+                        <span class="recurso-desc">- Contiene una gran lista de códigos</span>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <!-- Botones de navegación -->
+            <div class="navigation-buttons">
+                <a href="../Semana1/Sem_1.html" class="btn">← Semana Anterior</a>
+                <a href="../index.html#weeks" class="btn">Volver al Índice</a>
+                <a href="../Semana3/Sem_3.html" class="btn">Semana Siguiente →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="basketball-decoration"></div>
+        <p>&copy; 2025 | Todos los derechos reservados </p>
+        <p>Desarrollado por Castro Casas Alexis</p>
+    </footer>
+
+    <script src="Sem_2.js"></script>
+</body>
+</html>

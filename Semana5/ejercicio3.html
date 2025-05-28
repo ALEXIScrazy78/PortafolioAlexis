@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Verificador de Edad</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            color: #000; /* Secondary color */
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        input[type="number"] {
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100px;
+            text-align: center;
+        }
+        button {
+            background-color: #913b01; /* Primary color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            margin-left: 10px;
+        }
+        button:hover {
+            background-color: #17408B; /* Accent color */
+        }
+        #resultadoEdad {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio 3: Verificador de Edad</h1>
+        <label for="edadInput">Ingresa tu edad:</label>
+        <input type="number" id="edadInput" min="0">
+        <button onclick="verificarEdad()">Verificar</button>
+        <p id="resultadoEdad"></p>
+    </div>
+
+    <script>
+        function verificarEdad() {
+            const edadInput = document.getElementById('edadInput');
+            const resultadoElemento = document.getElementById('resultadoEdad');
+
+            if (edadInput && resultadoElemento) {
+                const edad = parseInt(edadInput.value, 10); // Parse to integer
+
+                if (isNaN(edad) || edad < 0) {
+                    resultadoElemento.textContent = 'Por favor, ingresa una edad válida.';
+                    resultadoElemento.style.color = 'red';
+                } else if (edad >= 18) {
+                    resultadoElemento.textContent = '¡Eres mayor de edad!';
+                    resultadoElemento.style.color = 'green';
+                } else {
+                    resultadoElemento.textContent = 'Eres menor de edad.';
+                    resultadoElemento.style.color = 'orange';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

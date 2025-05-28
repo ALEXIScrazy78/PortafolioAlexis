@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Ejercicio 1: Componente Básico</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            color: #913b01; /* Primary color */
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #17408B; /* Accent color */
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>React Ejercicio 1: Componente Básico y Props</h1>
+        <div id="react-app-root"></div>
+    </div>
+
+    <script type="text/babel">
+        // Definición del componente funcional
+        function Saludo(props) {
+            return (
+                <div>
+                    <h2>¡Hola, {props.nombre}!</h2>
+                    <p>Este es un componente de React renderizado con props.</p>
+                </div>
+            );
+        }
+
+        // Renderizado del componente en el DOM
+        ReactDOM.createRoot(document.getElementById('react-app-root')).render(
+            <Saludo nombre="Mundo React" />
+        );
+    </script>
+</body>
+</html>

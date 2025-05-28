@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 4</title>
+    <link rel="stylesheet" href="Sem_4.css">
+    <style>
+  
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: rgb(236, 229, 229);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            text-align: center;
+            padding: 15px;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .gallery-overlay h4 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .gallery-overlay p {
+            font-size: 0.9rem;
+        }
+
+        /* New CSS for Exercise 2: CSS-only Modal */
+        /* Hidden by default */
+        .modal-toggle {
+            display: none; /* Hide the checkbox */
+        }
+
+        .modal-trigger {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .modal-trigger:hover {
+            background-color: var(--primary-color);
+        }
+
+        .modal-content-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden; /* Hidden by default */
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .modal-toggle:checked + .modal-content-wrapper {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .modal-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            transform: translateY(-50px);
+            opacity: 0;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+        .modal-toggle:checked + .modal-content-wrapper .modal-box {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .modal-close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+            text-decoration: none;
+        }
+        .modal-close-button:hover {
+            color: var(--primary-color);
+        }
+
+        /* New CSS for Exercise 3: Animated Gradient Background */
+        .animated-gradient-section {
+            height: 300px;
+            background: linear-gradient(45deg, #FF6600, #17408B, #913b01, #000); /* Adjusted colors */
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(60, 28, 204);
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .animated-gradient-section h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .animated-gradient-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+
+                /* ... (previous CSS code) ... */
+
+        .code-example {
+            background-color: var(--secondary-color);
+            color: black; /* Changed from 'white' to 'black' */
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: monospace;
+            margin: 2rem 0;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .code-example::before {
+            content: 'Código';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5); /* This will still be light, consider changing if black background is removed */
+        }
+
+
+        .string {
+            color: #00cc00; /* This will still be green */
+        }
+
+        .comment {
+            color: #999; /* This will still be gray */
+        }
+
+        /* ... (rest of the CSS code) ... */
+    </style>
+</head>
+<body>
+
+    <button id="scrollToTopBtn" class="btn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99;">
+        ⬆️ Subir
+    </button>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <div class="basketball-decoration"></div>
+            <span>Semana 4</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../index.html#about">Sobre Mí</a></li>
+            <li><a href="../index.html#projects">Proyectos</a></li>
+            <li><a href="../index.html#weeks">Semanas</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>Semana 4: CSS Bootstrap y Tailwind</h1>
+        <h3>¿Qué hemos aprendido?</h3><br>
+        <p>He aprendido a construir interfaces web utilizando los frameworks CSS Bootstrap
+             y Tailwind, entendiendo las diferencias entre el enfoque de componentes predefinidos de Bootstrap 
+             y el enfoque de clases utilitarias de Tailwind. Ahora puedo aplicar lo básico de manera, 
+             ordenada y visualmente atractivas de forma eficiente.</p>
+    </header>
+
+    <div class="container">
+        <div class="week-content">
+            <div class="week-info">
+                <div class="info-card">
+                    <h3>Objetivos de Aprendizaje</h3>
+                    <ul>
+                        <li>Comprender la estructura y propósito de los frameworks Bootstrap y Tailwind.</li>
+                        <li>Utilizar el sistema de rejilla (grid) de Bootstrap para crear layouts responsivos.</li>
+                        <li>Aplicar estilos mediante CSS usando selectores y propiedades.</li>
+                        <li>Comparar ventajas y desventajas entre ambos frameworks.</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Tecnologías Utilizadas</h3>
+                    <ul>
+                        <li>Bootstrap 5</li>
+                        <li>Tailwind CSS</li>
+                        <li>HTML5</li>
+                        <li>Visual Studio Code</li>
+                    </ul>
+                </div>
+            </div>
+
+           <div class="image-container">
+                <img src="imgsem4.jpg" alt="Imagen de la semana" class="imgsem1">
+            </div>
+
+            <h2 class="section-title">Ejercicios</h2>         
+
+            <div class="ejercicios-container">
+                <div class="ejercicio-item">
+                    <h3>Ejemplo de Componente Bootstrap: Tarjeta de Noticia</h3>
+                    <p>Este ejemplo muestra una tarjeta de noticia simple construida con clases de Bootstrap para la estructura y el estilo. Destaca cómo Bootstrap facilita la creación de componentes UI responsivos con un mínimo de CSS personalizado.</p>
+                    <div class="card" style="width: 18rem;">
+                        <img src="noticia.jpg" class="card-img-top" alt="Placeholder image">
+                        <div class="card-body">
+                            <h5 class="card-title">Título de la Noticia</h5>
+                            <p class="card-text">Una breve descripción de la noticia, demostrando el uso de texto y botones de Bootstrap.</p>
+                            <a href="#ejercicio-item" class="btn btn-primary">Leer más</a>
+                        </div>
+                    </div>
+                    <p class="code-example">
+                        &lt;!-- Para que funcione, se necesita enlazar Bootstrap CSS --&gt;
+                        <br>
+                        &lt;div class="card" style="width: 18rem;"&gt;
+                        <br>&nbsp;&nbsp;&lt;img src="https://via.placeholder.com/286x180" class="card-img-top" alt="Placeholder image"&gt;
+                        <br>&nbsp;&nbsp;&lt;div class="card-body"&gt;
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h5 class="card-title"&gt;Título de la Noticia&lt;/h5&gt;
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="card-text"&gt;Una breve descripción de la noticia, demostrando el uso de texto y botones de Bootstrap.&lt;/p&gt;
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#" class="btn btn-primary"&gt;Leer más&lt;/a&gt;
+                        <br>&nbsp;&nbsp;&lt;/div&gt;
+                        <br>&lt;/div&gt;
+                    </p>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Ejemplo de Utilidades Tailwind CSS</h3>
+                    <p>Este ejemplo ilustra cómo Tailwind CSS utiliza sus funciones para realizar cambios en el estilo</p>
+                    <a href="Tailwind2.html">Ejemplo de Tailwind CSS</a>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Conclusión</h2>
+            <div class="reflection">
+                <p>Tanto Bootstrap como Tailwind CSS son herramientas poderosas que facilitan y aceleran 
+                    el desarrollo web moderno. Bootstrap destaca por su facilidad y velocidad gracias a 
+                    componentes listos para usar, mientras que Tailwind ofrece una personalización detallada
+                     ideal para diseños únicos. 
+                </p>
+            </div>
+
+
+            <h2 class="section-title">Reflexión </h2>
+            <div class="reflection">
+                <p>Explorar estos frameworks me hizo ver que no hay una única manera de diseñar una página web. 
+                    Bootstrap me ayudó a construir rápidamente prototipos funcionales, mientras que Tailwind me
+                     ofreció control absoluto sobre el diseño. Aprender ambos me brinda una ventaja competitiva 
+                     al momento de elegir la herramienta más adecuada según el proyecto.
+                </p>
+            </div>
+
+
+            <h2 class="section-title">Recursos Utilizados</h2>
+            <div class="resources">
+                <ul>
+                    <li class="recurso-link">
+                        <a href="https://getbootstrap.com/" class="recurso-btn">
+                          <i class="fab fa-github"></i> Bootstrap
+                        </a>
+                        <span class="recurso-desc">- Documentación oficial de Bootstrap</span>
+                    </li>
+
+                    <li class="recurso-link">
+                        <a href="https://tailwindcss.com/" class="recurso-btn">
+                          <i class="fab fa-github"></i> Tailwind CSS
+                        </a>
+                        <span class="recurso-desc">- Documentación oficial de Tailwind CSS</span>
+                    </li>
+
+                    <li class="recurso-link">
+                        <a href="https://play.tailwindcss.com/" class="recurso-btn">
+                          <i class="fab fa-github"></i>  TailwindPlay
+                        </a>
+                        <span class="recurso-desc">- Entorno en línea para probar Tailwind</span>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="navigation-buttons">
+                <a href="../Semana3/Sem_3.html" class="btn">← Semana Anterior</a>
+                <a href="../index.html#weeks" class="btn">Volver al Índice</a>
+                <a href="../Semana5/Sem_5.html" class="btn">Semana Siguiente →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="basketball-decoration"></div>
+        <p>&copy; 2025 | Todos los derechos reservados </p>
+        <p>Desarrollado por Castro Casas Alexis</p>
+    </footer>
+
+    <script src="Sem_4.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Ejercicio 2: Estado y Eventos</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            color: #17408B; /* Accent color */
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        button {
+            background-color: #913b01; /* Primary color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            margin: 0 5px;
+        }
+        button:hover {
+            background-color: #000; /* Secondary color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>React Ejercicio 2: Contador con Estado y Eventos</h1>
+        <div id="react-app-root"></div>
+    </div>
+
+    <script type="text/babel">
+        // Importamos `useState` de React para manejar el estado
+        const { useState } = React;
+
+        function Contador() {
+            // Declaramos una variable de estado 'cuenta' con valor inicial 0
+            const [cuenta, setCuenta] = useState(0);
+
+            // Función para incrementar la cuenta
+            const handleIncrementar = () => {
+                setCuenta(cuenta + 1);
+            };
+
+            // Función para decrementar la cuenta
+            const handleDecrementar = () => {
+                setCuenta(cuenta - 1);
+            };
+
+            return (
+                <div>
+                    <p>La cuenta es: {cuenta}</p>
+                    <button onClick={handleDecrementar}>Decrementar</button>
+                    <button onClick={handleIncrementar}>Incrementar</button>
+                </div>
+            );
+        }
+
+        // Renderizado del componente en el DOM
+        ReactDOM.createRoot(document.getElementById('react-app-root')).render(
+            <Contador />
+        );
+    </script>
+</body>
+</html>

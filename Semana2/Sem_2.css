@@ -1,0 +1,684 @@
+:root {
+    --primary-color: #913b01; 
+    --secondary-color: #000000; 
+    --accent-color: #17408B; 
+    --text-color: #333333;
+    --light-color: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--light-color);
+    color: var(--text-color);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 102, 0, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(23, 64, 139, 0.1) 0%, transparent 20%);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.navbar {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.basketball-decoration {
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+}
+
+.basketball-decoration::before, .basketball-decoration::after {
+    content: '';
+    position: absolute;
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.basketball-decoration::after {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .nav-links li {
+    margin-left: 1.5rem;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
+    z-index: 1;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.week-content {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.week-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 2rem;
+}
+
+.info-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 1.5rem;
+    background-color: var(--light-color);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.info-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 10px 8px 20px #913b01;
+}
+
+.info-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.info-card h3 i {
+    margin-right: 10px;
+}
+
+.info-card ul {
+    list-style: none;
+}
+
+.info-card ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.info-card ul li::before {
+    content: '🏀';
+    position: absolute;
+    left: -10px;
+    top: 0;
+    font-size: 0.8rem;
+}
+
+.section-title {
+    margin: 2rem 0 1rem;
+    color: var(--secondary-color);
+    position: relative;
+    padding-left: 1rem;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Slightly move down */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-title.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+.activity {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.activity-title {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+
+.code-example {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    font-family: monospace;
+    margin: 2rem 0;
+    position: relative;
+    overflow-x: auto;
+}
+
+.code-example::before {
+    content: 'Código';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+.string {
+    color: #00cc00;
+}
+
+.comment {
+    color: #999;
+}
+
+.resources {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.resources ul {
+    list-style: none;
+}
+
+.resources ul li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.resources ul li::before {
+    content: '📚';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.resources a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.resources a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.reflection {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    text-align: justify;
+    border-left: 4px solid var(--accent-color);
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.image-container {
+    text-align: center; 
+    margin: 2rem 0; 
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+    max-width: 800px; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.imgsem1 { 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    border-radius: 10px; 
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out; 
+
+}
+
+.imgsem1:hover { 
+    transform: scale(1.3);
+    filter: brightness(1.1); 
+    box-shadow: 10px 10px 20px rgba(190, 70, 23, 0.015);
+}
+
+footer {    
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+footer p {
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    .navbar .logo {
+        margin-bottom: 1rem;
+    }
+
+    .navbar .nav-links {
+        width: 100%;
+        justify-content: space-around;
+        padding: 0 1rem;
+    }
+
+    .navbar .nav-links li {
+        margin: 0;
+    }
+
+    .page-header {
+        padding: 2rem 1rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .navigation-buttons .btn {
+        text-align: center;
+    }
+}
+
+/* ===== ESTILOS DE LA NUEVA SECCIÓN DE EJERCICIOS (del HTML 2) ===== */
+.ejercicios-container {
+    margin: 30px 0;
+}
+
+.ejercicio-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-left: 4px solid #17408B; /* Color naranja baloncesto */
+}
+
+.ejercicio-item h3 {
+    color: #913b01;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    padding-left: 10px;
+}
+
+.ejercicio-item p {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+/* Estilos específicos para los componentes */
+.nav-ejercicio {
+    background-color: #000;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.nav-ejercicio ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.nav-ejercicio a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-ejercicio a:hover {
+    background-color: #913b01;
+}
+
+.table-ejercicio {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.table-ejercicio th, 
+.table-ejercicio td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-ejercicio thead th {
+    background-color: #17408B; /* Azul NBA */
+    color: white;
+}
+
+
+/* === Estilos para los ejercicios 3-6 === */
+/* Ejercicio 3 - Grid Container */
+.container-ejercicio {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "nav section aside"
+        "nav article aside"
+        "footer footer footer";
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 15px;
+    height: 300px;
+    margin: 15px 0;
+}
+
+#header-ejercicio {
+    grid-area: header;
+    background-color: #913b01; /* Naranja baloncesto */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+#nav-ejercicio {
+    grid-area: nav;
+    background-color: #000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+#section-ejercicio {
+    grid-area: section;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+#article-ejercicio {
+    grid-area: article;
+    background-color: rgba(255, 102, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+#aside-ejercicio {
+    grid-area: aside;
+    background-color: #17408B; /* Azul NBA */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+#footer-ejercicio {
+    grid-area: footer;
+    background-color: #000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+/* Ejercicio 4 - Tabla grande */
+.table-scroll {
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.big-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.big-table th, .big-table td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.big-table thead th {
+    background-color: #17408B;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+/* Ejercicio 5 - Tabla con filas */
+.row-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.row-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.row-table td:first-child {
+    background-color: #913b01;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 30%;
+}
+
+.row-table tr:nth-child(even) td:first-child {
+    background-color: #17408B;
+}
+
+/* Ejercicio 6 - Tarjeta de perfil */
+.card-ejercicio {
+    max-width: 350px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card-ejercicio:hover {
+    transform: translateY(-5px);
+}
+
+.card-ejercicio img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #913b01;
+    margin: 0 auto 15px;
+}
+
+.card-ejercicio h2 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.card-ejercicio p {
+    background: transparent;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.redes-ejercicio {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+}
+
+.redes-ejercicio a {
+    background-color: #913b01;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.redes-ejercicio a:hover {
+    background-color: #17408B;
+}

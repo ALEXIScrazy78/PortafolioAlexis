@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Ejercicio 3: Listas y Renderizado Condicional</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+        h1 {
+            color: #000; /* Secondary color */
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        li {
+            background-color: #f0f0f0;
+            margin-bottom: 8px;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+        button {
+            background-color: #913b01; /* Primary color */
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #17408B; /* Accent color */
+        }
+        .empty-message {
+            color: #888;
+            font-style: italic;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>React Ejercicio 3: Lista de Tareas con Renderizado Condicional</h1>
+        <div id="react-app-root"></div>
+    </div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function ListaTareas() {
+            const [tareas, setTareas] = useState([
+                { id: 1, texto: 'Aprender React Hooks', completada: false },
+                { id: 2, texto: 'Construir un contador', completada: true },
+                { id: 3, texto: 'Explorar componentes', completada: false },
+            ]);
+
+            const toggleCompletada = (id) => {
+                setTareas(tareas.map(tarea =>
+                    tarea.id === id ? { ...tarea, completada: !tarea.completada } : tarea
+                ));
+            };
+
+            return (
+                <div>
+                    {tareas.length > 0 ? (
+                        <ul>
+                            {tareas.map(tarea => (
+                                <li key={tarea.id} className={tarea.completada ? 'completed' : ''}>
+                                    <span>{tarea.texto}</span>
+                                    <button onClick={() => toggleCompletada(tarea.id)}>
+                                        {tarea.completada ? 'Deshacer' : 'Completar'}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p className="empty-message">No hay tareas pendientes. ¡Felicidades!</p>
+                    )}
+                    {/* Ejemplo de renderizado condicional simple */}
+                    {tareas.some(tarea => !tarea.completada) && (
+                        <p style={{ marginTop: '20px', color: '#17408B' }}>¡Sigue trabajando!</p>
+                    )}
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('react-app-root')).render(
+            <ListaTareas />
+        );
+    </script>
+</body>
+</html>

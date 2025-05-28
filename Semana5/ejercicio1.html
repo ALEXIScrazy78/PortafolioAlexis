@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1: Cambiar Texto</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            color: #913b01; /* Primary color */
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #17408B; /* Accent color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #000; /* Secondary color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio 1: Manipulación del DOM - Cambiar Texto</h1>
+        <p id="textoCambiante">Este es el texto inicial. ¡Haz clic en el botón para cambiarlo!</p>
+        <button onclick="cambiarTexto()">Cambiar Texto</button>
+    </div>
+
+    <script>
+        function cambiarTexto() {
+            const elemento = document.getElementById('textoCambiante');
+            elemento.textContent = '¡El texto ha sido cambiado por JavaScript!';
+            elemento.style.color = '#913b01'; /* Use primary color */
+            elemento.style.fontWeight = 'bold';
+        }
+    </script>
+</body>
+</html>
