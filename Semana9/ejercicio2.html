@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Ejercicio Complejo 2: Carga de Datos con useEffect</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+        h1 {
+            color: #17408B; /* Accent color */
+            margin-bottom: 20px;
+        }
+        .loading {
+            color: #888;
+            font-style: italic;
+        }
+        .data-item {
+            background-color: #e9ecef;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            text-align: left;
+        }
+        .data-item h3 {
+            color: #913b01; /* Primary color */
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .data-item p {
+            font-size: 0.95em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>React Ejercicio Complejo 2: Carga de Datos con `useEffect`</h1>
+        <div id="react-app-root"></div>
+    </div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        function DataFetcher() {
+            const [data, setData] = useState([]);
+            const [loading, setLoading] = useState(true);
+            const [error, setError] = useState(null);
+
+            useEffect(() => {
+                // Simular una llamada a API
+                const fetchData = async () => {
+                    setLoading(true);
+                    setError(null);
+                    try {
+                        // Simular retraso de red
+                        await new Promise(resolve => setTimeout(resolve, 2000)); 
+                        
+                        const simulatedData = [
+                            { id: 1, title: 'Artículo 1', content: 'Contenido del artículo 1 sobre React Hooks.' },
+                            { id: 2, title: 'Artículo 2', content: 'Explorando el ciclo de vida de los componentes.' },
+                            { id: 3, title: 'Artículo 3', content: 'Manejo de formularios en React.' },
+                        ];
+                        setData(simulatedData);
+                    } catch (err) {
+                        setError('Error al cargar los datos.');
+                        console.error(err);
+                    } finally {
+                        setLoading(false);
+                    }
+                };
+
+                fetchData();
+                // El array vacío `[]` como segundo argumento de useEffect indica que
+                // este efecto se ejecuta solo una vez, después del renderizado inicial (como componentDidMount).
+            }, []); 
+
+            if (loading) {
+                return <p className="loading">Cargando datos...</p>;
+            }
+
+            if (error) {
+                return <p style={{ color: 'red' }}>Error: {error}</p>;
+            }
+
+            return (
+                <div>
+                    {data.map(item => (
+                        <div key={item.id} className="data-item">
+                            <h3>{item.title}</h3>
+                            <p>{item.content}</p>
+                        </div>
+                    ))}
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('react-app-root')).render(
+            <DataFetcher />
+        );
+    </script>
+</body>
+</html>
