@@ -26,14 +26,15 @@
     </nav>
 
     <header class="page-header">
-        <h1>Semana 10: Desarrollo Backend (Java, Spring y Arquitecturas Web)</h1>
+        <h1>Semana 10: Autenticación Segura con JWT en Aplicaciones Web</h1>
         <h3>¿Qué hemos aprendido?</h3><br>
         <p>
-            He aprendido a desarrollar aplicaciones backend con Java, tambien a crear 
-            proyectos usando Spring Framework. Ahora sé configurar entornos de desarrollo, 
-            manejar servidores como Apache Tomcat, generar contenido dinámico con JSP.
-            También he profundizado en temas avanzados como Inversión de 
-            Control (IoC), inyección de dependencias y cómo crear APIs REST.
+            implementar un sistema de autenticación seguro utilizando JSON Web Tokens (JWT).
+            Para proteger los datos sensibles, se encriptarán las contraseñas con bcrypt. 
+            Se establecerá la conexión entre el backend, desarrollado con Node.js y Express, 
+            y el frontend, construido con Next.js, a través de peticiones HTTP. Finalmente, 
+            se procederá al despliegue de una base de datos MySQL en la nube utilizando Clever 
+            Cloud, y los servicios de backend y frontend se desplegarán en Render y Vercel, respectivamente.
         </p>
     </header>
 
@@ -43,30 +44,25 @@
                 <div class="info-card">
                     <h3>Objetivos de Aprendizaje</h3>
                     <ul>
-                        <li>Comprender las diferentes arquitecturas de aplicaciones web modernas</li>
-                        <li>Dominar la configuración y administración de servidores web Apache Tomcat</li>
-                        <li>Aplicar los principios de Spring Framework para desarrollo empresarial</li>
-                        <li>Implementar aplicaciones web dinámicas utilizando JSP y el patrón MVC</li>
-                        <li>Configurar entornos de desarrollo completos</li>
-                        <li>Implementar sistemas de autenticación basados en tokens</li>
+                        <li>Implementar autenticación segura con JWT</li>
+                        <li>Gestionar conexiones entre frontend, backend y base de datos</li>
+                        <li>Aprender buenas prácticas de seguridad (encriptación, validación de tokens)</li>
+                        <li>Desplegar proyectos en entornos cloud.</li>
                     </ul>
                 </div>
                 <div class="info-card">
                     <h3>Tecnologías Utilizadas</h3>
                     <ul>
-                        <li>Java</li>
-                        <li>Apache Tomcat</li>
-                        <li>Apache HTTP Server</li>
-                        <li>OpenJDK</li>
-                        <li>Cloud Hosting</li>
-                        <li>Servicios DNS</li>
-                        <li>JWT (Jason Web Token)</li>
+                        <li><b>Backend: </b>Node.js Express, MySQL, Sequelize, JWT, bcrypt, cors, dotenv</li>
+                        <li><b>Fronted: </b>Next.js, React, Bootstrap, Axios</li>
+                        <li><b>Despliegue: </b>Clever Cloud (MySQL), Render (backend), Vercel (frontend)</li>
+                        <li><b>Control de versiones:</b> Git, GitHub</li>
                     </ul>
                 </div>
             </div>
 
            <div class="image-container">
-                <img src="imgsem9.png" alt="Imagen de la semana" class="imgsem1">
+                <img src="imgsem10.jpg" alt="Imagen de la semana" class="imgsem1">
             </div>
 
             <h2 class="section-title">¿Que se hizo?</h2>         
@@ -74,14 +70,14 @@
             <div class="ejercicios-container">
               
                 <div class="ejercicio-item">
-                    <h3>1. Fundamentos de Arquitectura Web</h3>
+                    <h3>1. Composición del sitio web con JWT</h3>
                         <ul class="listar">
-                            <li><b>Arquitecturas Cliente-Servidor:</b> Evolución desde aplicaciones multipágina hasta SPAs y arquitecturas híbridas</li>
-                            <li><b>Web:</b> Análisis de diferentes tipos de hosting y cloud computing</li>
-                            <li><b>Configuración de Servidores:</b> Apache HTTP Server y Apache Tomcat, parámetros esenciales y archivos de configuración</li><br>
+                            <li style="text-align: justify;"><b>Backend:</b> Se configuró un servidor con Node.js, Express y Sequelize para interactuar con MySQL. Se crearon rutas protegidas con middleware de autenticación JWT y se implementaron operaciones CRUD para usuarios, incluyendo el login con generación de tokens.</li>
+                            <li style="text-align: justify;"><b>Fronted:</b> Se desarrollaron las interfaces con Next.js y Bootstrap. Se manejaron los estados para la autenticación y la redirección al dashboard tras validar el token, estableciendo la conexión con el backend mediante Axios.</li>
+                            <li style="text-align: justify;"><b>Despliegue:</b> Se uno base de datos en Clever Cloud. Y para el backend en Render y frontend en Vercel.</li><br>
                         </ul>
                     <div class="exercise-preview">
-                        <img src="imgsem9.jpg" alt="Imagen de la semana" class="imgsem1">
+                        <img src="imgsem10_1.jpg" alt="Imagen de la semana" class="imgsem1">
                     </div>
                 </div>
             </div>
@@ -108,18 +104,19 @@
             
             <h2 class="section-title">Conclusión</h2>
             <div class="reflection">
-                <p>Esta semana me ha proporcionado una introducción clave en el desarrollo de aplicaciones backend 
-                    modernas. La progresión desde conceptos arquitectónicos fundamentales hasta la implementación 
-                    práctica con Spring Framework ha sido especialmente valiosa.
+                <p>El proyecto demostró cómo integrar JWT para autenticación en aplicaciones web full-stack, 
+                    asegurando rutas y datos sensibles. La combinación de encriptación, tokens y despliegue 
+                    en la nube proporciona una base escalable y segura para sistemas de login.
                 </p>
             </div>
 
             <h2 class="section-title">Reflexión </h2>
             <div class="reflection">
-                <p> La arquitectura MVC y el uso de JSP demostraron cómo separar lógica y
-                     presentación para crear aplicaciones escalables. Como reflexión, 
-                     dominar estas herramientas y conceptos es esencial para construir 
-                     soluciones robustas y eficientes en el mundo del desarrollo web.
+                <p>La autenticación con JWT no solo mejora la seguridad, sino que también optimiza la
+                     experiencia del usuario al evitar reinicios de sesión innecesarios. Sin embargo, 
+                     es crucial gestionar adecuadamente la expiración de tokens y proteger las claves 
+                     secretas. Este proyecto reforzó la importancia de conectar teoría (conceptos de seguridad) 
+                     con práctica (implementación y despliegue).
                 </p>
             </div>
 
