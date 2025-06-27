@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 10</title>
+    <link rel="stylesheet" href="Sem_10.css">
+</head>
+<body>
+
+    <button id="scrollToTopBtn" class="btn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99;">
+        ⬆️ Subir
+    </button>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <div class="basketball-decoration"></div>
+            <span>Semana 10</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../index.html#about">Sobre Mí</a></li>
+            <li><a href="../index.html#weeks">Semanas</a></li>
+            <li><a href="../index.html#projects">Proyectos</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>Semana 10: Autenticación con JWT en Aplicaciones Web</h1>
+        <h3>¿Qué hemos aprendido?</h3><br>
+        <p>
+            Implementación de un sistema de autenticación seguro utilizando JSON Web Tokens (JWT).
+            Para proteger los datos sensibles, se encriptarán las contraseñas con bcrypt. 
+            Se establecerá la conexión entre el backend, desarrollado con Node.js y Express, 
+            y el frontend, construido con Next.js, a través de peticiones HTTP. Finalmente, 
+            se procederá al despliegue de una base de datos MySQL en la nube utilizando Clever 
+            Cloud, y los servicios de backend y frontend se desplegarán en Render y Vercel, respectivamente.
+        </p>
+    </header>
+
+    <div class="container">
+        <div class="week-content">
+            <div class="week-info">
+                <div class="info-card">
+                    <h3>Objetivos de Aprendizaje</h3>
+                    <ul>
+                        <li>Implementar autenticación segura con JWT</li>
+                        <li>Gestionar conexiones entre frontend, backend y base de datos</li>
+                        <li>Aprender buenas prácticas de seguridad (encriptación, validación de tokens)</li>
+                        <li>Desplegar proyectos en entornos cloud.</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Tecnologías Utilizadas</h3>
+                    <ul>
+                        <li><b>Backend: </b>Node.js Express, MySQL, Sequelize, JWT, bcrypt, cors, dotenv</li>
+                        <li><b>Fronted: </b>Next.js, React, Bootstrap, Axios</li>
+                        <li><b>Despliegue: </b>Clever Cloud (MySQL), Render (backend), Vercel (frontend)</li>
+                        <li><b>Control de versiones:</b> Git, GitHub</li>
+                    </ul>
+                </div>
+            </div>
+
+           <div class="image-container">
+                <img src="imgsem10.jpg" alt="Imagen de la semana" class="imgsem1">
+            </div>
+
+            <h2 class="section-title">¿Que se hizo?</h2>         
+
+            <div class="ejercicios-container">
+              
+                <div class="ejercicio-item">
+                    <h3>1. Composición del sitio web con JWT</h3>
+                        <ul class="listar">
+                            <li style="text-align: justify;"><b>Backend:</b> Se configuró un servidor con Node.js, Express y Sequelize para interactuar con MySQL. Se crearon rutas protegidas con middleware de autenticación JWT y se implementaron operaciones CRUD para usuarios, incluyendo el login con generación de tokens.</li>
+                            <li style="text-align: justify;"><b>Fronted:</b> Se desarrollaron las interfaces con Next.js y Bootstrap. Se manejaron los estados para la autenticación y la redirección al dashboard tras validar el token, estableciendo la conexión con el backend mediante Axios.</li>
+                            <li style="text-align: justify;"><b>Despliegue:</b> Se uno base de datos en Clever Cloud. Y para el backend en Render y frontend en Vercel.</li><br>
+                        </ul>
+                    <div class="exercise-preview">
+                        <img src="imgsem10_1.jpg" alt="Imagen de la semana" class="imgsem1">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Ejercicios</h2> 
+            <div class="ejercicios-container">
+              
+                <div class="ejercicio-item">
+                    <h3>Despliegue de la aplicación web mediante Tokens</h3>
+                        <ul class="listar">
+                            <li style="text-align: justify;">Este ejercicio presenta una autenticación basada en tokens es un método de verificación de identidad que permite
+                                a los usuarios acceder a sistemas sin necesidad de proporcionar credenciales
+                                constantemente. Se basa en la emisión de un token, un conjunto de datos cifrados, que
+                                valida la identidad del usuario por un período determinado.
+                             </li><br>
+                        </ul>
+                    <div class="exercise-preview">
+                        <a href="https://frontend-login-tokens.vercel.app/login" class="btn">Despliegue TOKEN</a>
+                        <a href="https://github.com/Yaser-code/backend-login-tokens" class="btn">Código Backend</a>
+                        <a href="https://github.com/Yaser-code/frontend-login-tokens" class="btn">Código Frontend</a>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Conclusión</h2>
+            <div class="reflection">
+                <p>El proyecto demostró cómo integrar JWT para autenticación en aplicaciones web full-stack, 
+                    asegurando rutas y datos sensibles. La combinación de encriptación, tokens y despliegue 
+                    en la nube proporciona una base escalable y segura para sistemas de login.
+                </p>
+            </div>
+
+            <h2 class="section-title">Reflexión </h2>
+            <div class="reflection">
+                <p>La autenticación con JWT no solo mejora la seguridad, sino que también optimiza la
+                     experiencia del usuario al evitar reinicios de sesión innecesarios. Sin embargo, 
+                     es crucial gestionar adecuadamente la expiración de tokens y proteger las claves 
+                     secretas. Este proyecto reforzó la importancia de conectar teoría (conceptos de seguridad) 
+                     con práctica (implementación y despliegue).
+                </p>
+            </div>
+
+
+            <h2 class="section-title">Recursos Utilizados</h2>
+            <div class="resources">
+                <ul>
+                    <li class="recurso-link">
+                        <a href="https://www.youtube.com/watch?v=RsS-3F3VtQ0&list=PLS3Cbnye46mtMvTRwYbDF1wEzcZMY0p-h&index=8" class="recurso-btn">
+                          <i class="fab fa-github"></i> Video de Tokens
+                        </a>
+                        <span class="recurso-desc">- The Debug Arena</span>
+                    </li>
+
+                    <li class="recurso-link">
+                        <a href="https://www.youtube.com/watch?v=cAn2cX6OJwA" class="recurso-btn">
+                          <i class="fab fa-github"></i> Autenticación JWT + PYTHON
+                        </a>
+                        <span class="recurso-desc">- Stack Over Know</span>
+                    </li>
+
+                    <li class="recurso-link">
+                        <a href="https://jwt.io/" class="recurso-btn">
+                          <i class="fab fa-github"></i>  JSON Web Token (JWT) Debugger 
+                        </a>
+                        <span class="recurso-desc">- JWT Debugger</span>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="navigation-buttons">
+                <a href="../Semana9/Sem_9.html" class="btn">← Semana Anterior</a>
+                <a href="../Semana11/Sem_11.html" class="btn">Semana Siguiente →</a>
+                </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="basketball-decoration"></div>
+        <p>&copy; 2025 | Todos los derechos reservados </p>
+        <p>Desarrollado por Castro Casas Alexis</p>
+    </footer>
+
+    <script src="Sem_10.js"></script>
+</body>
+</html>
