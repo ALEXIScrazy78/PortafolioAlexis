@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semana 10</title>
-    <link rel="stylesheet" href="Sem_10.css">
+    <title>Semana 12</title>
+    <link rel="stylesheet" href="Sem_12.css">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
     <nav class="navbar">
         <div class="logo">
             <div class="basketball-decoration"></div>
-            <span>Semana 10</span>
+            <span>Semana 12</span>
         </div>
         <ul class="nav-links">
             <li><a href="../index.html">Inicio</a></li>
@@ -26,15 +26,16 @@
     </nav>
 
     <header class="page-header">
-        <h1>Semana 10: Autenticación con JWT en Aplicaciones Web</h1>
+        <h1>Semana 12: Desarrollo Web con JSP, Jakarta y Spring</h1>
         <h3>¿Qué hemos aprendido?</h3><br>
         <p>
-            Implementación de un sistema de autenticación seguro utilizando JSON Web Tokens (JWT).
-            Para proteger los datos sensibles, se encriptarán las contraseñas con bcrypt. 
-            Se establecerá la conexión entre el backend, desarrollado con Node.js y Express, 
-            y el frontend, construido con Next.js, a través de peticiones HTTP. Finalmente, 
-            se procederá al despliegue de una base de datos MySQL en la nube utilizando Clever 
-            Cloud, y los servicios de backend y frontend se desplegarán en Render y Vercel, respectivamente.
+            Exploramos el desarrollo de aplicaciones web utilizando tecnologías 
+            como JSP (Jakarta Server Pages), Jakarta EE, y el framework Spring. 
+            Aprendimos a configurar servidores web como Apache Tomcat, gestionar 
+            dependencias con Maven, y aplicar el patrón MVC (Modelo-Vista-Controlador) 
+            en proyectos JSP. Además, profundizamos en conceptos clave de Spring, como 
+            Inversión de Control (IoC), Inyección de Dependencias (DI), y la creación de 
+            APIs RESTful con Spring Boot.
         </p>
     </header>
 
@@ -44,25 +45,27 @@
                 <div class="info-card">
                     <h3>Objetivos de Aprendizaje</h3>
                     <ul>
-                        <li>Implementar autenticación segura con JWT</li>
-                        <li>Gestionar conexiones entre frontend, backend y base de datos</li>
-                        <li>Aprender buenas prácticas de seguridad (encriptación, validación de tokens)</li>
-                        <li>Desplegar proyectos en entornos cloud.</li>
+                        <li>Configurar y desplegar aplicaciones web en Apache Tomcat</li>
+                        <li>Aplicar el patrón MVC en proyectos JSP y Spring</li>
+                        <li>Desarrollar APIs RESTful con Spring Boot y Spring Data JPA</li>
+                        <li>Conectar aplicaciones Spring con bases de datos MySQL</li>
+                        <li>Validar datos y manejar excepciones en APIs</li>
                     </ul>
                 </div>
                 <div class="info-card">
                     <h3>Tecnologías Utilizadas</h3>
                     <ul>
-                        <li><b>Backend: </b>Node.js Express, MySQL, Sequelize, JWT, bcrypt, cors, dotenv</li>
-                        <li><b>Fronted: </b>Next.js, React, Bootstrap, Axios</li>
-                        <li><b>Despliegue: </b>Clever Cloud (MySQL), Render (backend), Vercel (frontend)</li>
-                        <li><b>Control de versiones:</b> Git, GitHub</li>
+                        <li><b>Backend: </b>Jakarta EE, Spring Framework, Spring Boot, Spring Data JPA</li>
+                        <li><b>Fronted: </b>JSP (Jakarta Server Pages)</li>
+                        <li><b>Base de datos: </b>MySQL</li>
+                        <li><b>Herramientas: </b>Apache Tomcat, Maven, IntelliJ IDEA</li>
+                        <li><b>Despliegue: </b>Servidor local (Tomcat), configuración de variables de entorno</li>
                     </ul>
                 </div>
             </div>
 
            <div class="image-container">
-                <img src="imgsem10.jpg" alt="Imagen de la semana" class="imgsem1">
+                <img src="imgsem121.jpg" alt="Imagen de la semana" class="imgsem1">
             </div>
 
             <h2 class="section-title">¿Que se hizo?</h2>         
@@ -70,14 +73,48 @@
             <div class="ejercicios-container">
               
                 <div class="ejercicio-item">
-                    <h3>1. Composición del sitio web con JWT</h3>
+                    <h3>1. Configuración de entornos</h3>
                         <ul class="listar">
-                            <li style="text-align: justify;"><b>Backend:</b> Se configuró un servidor con Node.js, Express y Sequelize para interactuar con MySQL. Se crearon rutas protegidas con middleware de autenticación JWT y se implementaron operaciones CRUD para usuarios, incluyendo el login con generación de tokens.</li>
-                            <li style="text-align: justify;"><b>Fronted:</b> Se desarrollaron las interfaces con Next.js y Bootstrap. Se manejaron los estados para la autenticación y la redirección al dashboard tras validar el token, estableciendo la conexión con el backend mediante Axios.</li>
-                            <li style="text-align: justify;"><b>Despliegue:</b> Se uno base de datos en Clever Cloud. Y para el backend en Render y frontend en Vercel.</li><br>
+                            <li style="text-align: justify;">Instalación de JDK, Apache Tomcat, y configuración de variables de entorno.</li>
+                            <li style="text-align: justify;">Creación de proyectos Maven y gestión de dependencias.</li>
                         </ul>
                     <div class="exercise-preview">
-                        <img src="imgsem10_1.jpg" alt="Imagen de la semana" class="imgsem1">
+                        <img src="imgsem12.jpg" alt="Imagen de la semana" class="imgsem1">
+                    </div>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>2. Desarrollo con JSP</h3>
+                        <ul class="listar">
+                            <li style="text-align: justify;">Creación de páginas dinámicas usando scriptlets, declaraciones y expresiones JSP</li>
+                            <li style="text-align: justify;">Implementación de formularios con métodos GET y POST</li>
+                            <li style="text-align: justify;">Uso de objetos implícitos de JSP (request, response, session)</li><br>
+                        </ul>
+                    <div class="exercise-preview">
+                        <img src="imgsem12_1.jpg" alt="Imagen de la semana" class="imgsem1">
+                    </div>
+                </div>
+
+
+                <div class="ejercicio-item">
+                    <h3>3. Spring Framework</h3>
+                        <ul class="listar">
+                            <li style="text-align: justify;">Configuración de Spring IoC Container mediante archivos XML</li>
+                            <li style="text-align: justify;">Desarrollo de APIs RESTful con Spring Boot y Spring Data JPA</li>
+                            <li style="text-align: justify;">Validación de datos y manejo de excepciones</li><br>
+                        </ul>
+                    <div class="exercise-preview">
+                        <img src="imgsem12_2.jpg" alt="Imagen de la semana" class="imgsem1">
+                    </div>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>4. Verificación con Postman</h3>
+                        <ul class="listar">
+                            <li style="text-align: justify;">El testeo de este programa se hizo con Postman</li>
+                        </ul>
+                    <div class="exercise-preview">
+                        <img src="imgsem12_3.jpg" alt="Imagen de la semana" class="imgsem1">
                     </div>
                 </div>
             </div>
@@ -86,37 +123,42 @@
             <div class="ejercicios-container">
               
                 <div class="ejercicio-item">
-                    <h3>Despliegue de la aplicación web mediante Tokens</h3>
+                    <h3>Ejercicios Propuestos de Desarrollo API con Spring</h3>
                         <ul class="listar">
-                            <li style="text-align: justify;">Este ejercicio presenta una autenticación basada en tokens es un método de verificación de identidad que permite
-                                a los usuarios acceder a sistemas sin necesidad de proporcionar credenciales
-                                constantemente. Se basa en la emisión de un token, un conjunto de datos cifrados, que
-                                valida la identidad del usuario por un período determinado.
+                            <li style="text-align: justify;">ELos ejercicios propuestos al final del documento
+                                plantean desafíos prácticos para implementar APIs REST con Spring, 
+                                abarcando desde validaciones básicas hasta operaciones CRUD complejas 
+                                con múltiples tablas relacionadas. El primer ejercicio se enfoca en validar
+                                 parámetros numéricos en la ruta, el segundo en calcular promedios a partir de 
+                                 parámetros query, mientras que los dos últimos plantean el diseño completo de 
+                                 APIs para gestionar datos geográficos estructurados en tres tablas relacionadas 
+                                 (departamento, provincia y distrito), incluyendo operaciones CRUD y consultas específicas.
                              </li><br>
                         </ul>
                     <div class="exercise-preview">
-                        <a href="https://frontend-login-tokens.vercel.app/login" class="btn">Despliegue TOKEN</a>
-                        <a href="https://github.com/Yaser-code/backend-login-tokens" class="btn">Código Backend</a>
-                        <a href="https://github.com/Yaser-code/frontend-login-tokens" class="btn">Código Frontend</a>
+                        <a href="semana12.pdf" class="btn">Jakarta and Spring</a>
+                        <a href="https://github.com/ALEXIScrazy78/JakartaDocentes/tree/main/docentes" class="btn">Registro de docentes</a>
+                        <a href="https://github.com/ALEXIScrazy78/JakartaDocentes/tree/main/AppAlexis" class="btn">Consulta de Alumnos</a>
                     </div>
                 </div>
             </div>
             
             <h2 class="section-title">Conclusión</h2>
             <div class="reflection">
-                <p>El proyecto demostró cómo integrar JWT para autenticación en aplicaciones web full-stack, 
-                    asegurando rutas y datos sensibles. La combinación de encriptación, tokens y despliegue 
-                    en la nube proporciona una base escalable y segura para sistemas de login.
+                <p>El proyecto demostró cómo integrar tecnologías como JSP, Jakarta EE y Spring para construir 
+                    aplicaciones web robustas y escalables. La combinación de Spring Boot con JPA simplificó 
+                    la conexión con bases de datos, mientras que el patrón MVC y las validaciones mejoraron 
+                    la estructura y seguridad del código.
                 </p>
             </div>
 
             <h2 class="section-title">Reflexión </h2>
             <div class="reflection">
-                <p>La autenticación con JWT no solo mejora la seguridad, sino que también optimiza la
-                     experiencia del usuario al evitar reinicios de sesión innecesarios. Sin embargo, 
-                     es crucial gestionar adecuadamente la expiración de tokens y proteger las claves 
-                     secretas. Este proyecto reforzó la importancia de conectar teoría (conceptos de seguridad) 
-                     con práctica (implementación y despliegue).
+                <p>El uso de Spring Framework agiliza el desarrollo de aplicaciones empresariales, 
+                    pero requiere comprensión profunda de conceptos como IoC y DI. La autenticación 
+                    con JWT (no cubierta aquí pero relevante) sería un siguiente paso para mejorar 
+                    la seguridad. La práctica reforzó la importancia de planificar la arquitectura 
+                    antes de codificar.
                 </p>
             </div>
 
@@ -125,24 +167,31 @@
             <div class="resources">
                 <ul>
                     <li class="recurso-link">
-                        <a href="https://www.youtube.com/watch?v=RsS-3F3VtQ0&list=PLS3Cbnye46mtMvTRwYbDF1wEzcZMY0p-h&index=8" class="recurso-btn">
-                          <i class="fab fa-github"></i> Video de Tokens
+                        <a href="semana12.pdf" class="recurso-btn">
+                          <i class="fab fa-github"></i> Ejercicios e información fundamental de Jakarta y Spring
                         </a>
-                        <span class="recurso-desc">- The Debug Arena</span>
+                        <span class="recurso-desc">- Material presentado por el Ing. Jaime Suasnabar Terrel</span>
                     </li>
 
                     <li class="recurso-link">
-                        <a href="https://www.youtube.com/watch?v=cAn2cX6OJwA" class="recurso-btn">
-                          <i class="fab fa-github"></i> Autenticación JWT + PYTHON
+                        <a href="https://start.spring.io/" class="recurso-btn">
+                          <i class="fab fa-github"></i> Crea un proyecto Spring
                         </a>
-                        <span class="recurso-desc">- Stack Over Know</span>
+                        <span class="recurso-desc">- Spring Start</span>
                     </li>
 
                     <li class="recurso-link">
-                        <a href="https://jwt.io/" class="recurso-btn">
-                          <i class="fab fa-github"></i>  JSON Web Token (JWT) Debugger 
+                        <a href="https://docs.spring.io/spring-framework/reference/index.html" class="recurso-btn">
+                          <i class="fab fa-github"></i>  Spring Documentation
                         </a>
-                        <span class="recurso-desc">- JWT Debugger</span>
+                        <span class="recurso-desc">- Spring</span>
+                    </li>
+
+                    <li class="recurso-link">
+                        <a href="https://jakarta.ee/learn/docs/jakartaee-tutorial/current/index.html" class="recurso-btn">
+                          <i class="fab fa-github"></i>  Jakarta Documentation
+                        </a>
+                        <span class="recurso-desc">- Jakarta</span>
                     </li>
                 </ul>
             </div>
@@ -150,8 +199,8 @@
 
 
             <div class="navigation-buttons">
-                <a href="../Semana9/Sem_9.html" class="btn">← Semana Anterior</a>
-                <a href="../Semana11/Sem_11.html" class="btn">Semana Siguiente →</a>
+                <a href="../Semana11/Sem_11.html" class="btn">← Semana Anterior</a>
+                <a href="../Semana13/Sem_13.html" class="btn">Semana Siguiente →</a>
                 </div>
         </div>
     </div>
@@ -162,6 +211,6 @@
         <p>Desarrollado por Castro Casas Alexis</p>
     </footer>
 
-    <script src="Sem_10.js"></script>
+    <script src="Sem_12.js"></script>
 </body>
 </html>
