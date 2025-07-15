@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 14</title>
+    <link rel="stylesheet" href="Sem_14.css">
+</head>
+<body>
+
+    <button id="scrollToTopBtn" class="btn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99;">
+        ⬆️ Subir
+    </button>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <div class="basketball-decoration"></div>
+            <span>Semana 14</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../index.html#about">Sobre Mí</a></li>
+            <li><a href="../index.html#weeks">Semanas</a></li>
+            <li><a href="../index.html#projects">Proyectos</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>Semana 14: Desarrollo Integrado con Flask y Python</h1>
+        <h3>¿Qué hemos aprendido?</h3><br>
+        <p>
+            Exploramos el desarrollo web backend utilizando Python y el microframework Flask, 
+            además de fundamentos esenciales del lenguaje Python. Se aprendió a configurar Apache 
+            con mod_wsgi, trabajar con plantillas HTML mediante Jinja2, manejar formularios, conectar 
+            Flask a bases de datos MySQL y desarrollar aplicaciones web ligeras. Además, se construyó 
+            una pequeña app con Flask, desde la creación de rutas hasta el despliegue local, incluyendo 
+            el uso de herramientas como pip y pymysql.
+        </p>
+    </header>
+
+    <div class="container">
+        <div class="week-content">
+            <div class="week-info">
+                <div class="info-card">
+                    <h3>Objetivos de Aprendizaje</h3>
+                    <ul>
+                        <li>Instalar y configurar Python y Apache con mod_wsgi</li>
+                        <li>Comprender los fundamentos de Python: variables, clases, funciones, estructuras</li>
+                        <li>Usar Flask para crear rutas, renderizar vistas y manejar formularios</li>
+                        <li>Implementar el patrón MVC en Flask con plantillas Jinja2</li>
+                        <li>Conectar Flask con bases de datos MySQL usando pymysql</li>
+                        <li>Crear aplicaciones web orientadas a objetos con Flask</li>
+                        <li>Estilizar HTML y validar datos desde formularios web</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Tecnologías Utilizadas</h3>
+                    <ul>
+                        <li><b>Lenguaje: </b>Python 3.x</li>
+                        <li><b>Framework: </b>Flask</li>
+                        <li><b>Servidor Web: </b>Apache con mod_wsgi</li>
+                        <li><b>Plantillas: </b>Jinja2</li>
+                        <li><b>Base de datos: </b>MySQL</li>
+                        <li><b>Gestor de paquetes: </b>pip</li>
+                        <li><b>Herramientas adicionales: </b>Apache Lounge, Visual C++ Redistributable</li>
+                    </ul>
+                </div>
+            </div>
+
+           <div class="image-container">
+                <img src="imgsem14.jpg" alt="Imagen de la semana" class="imgsem1">
+            </div>
+
+            <h2 class="section-title">¿Que se hizo?</h2>         
+
+            <div class="ejercicios-container">
+              
+                <div class="ejercicio-item">
+                    <h3>1. Configuración del entorno y servidor Apache</h3>
+                        <ul class="listar">
+                            <li style="text-align: justify;">Configuración de httpd.conf (puerto 8080, ServerRoot)</li>
+                            <li style="text-align: justify;">Integración de mod_wsgi para ejecutar aplicaciones Flask en Apache</li>
+                        </ul>
+                    <div class="exercise-preview">
+                        <img src="imgsem14_1.jpg" alt="Imagen de la semana" class="imgsem1">
+                    </div>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>2. Fundamentos de Python</h3>
+                        <ul class="listar">
+                            <li style="text-align: justify;">Tipado dinámico, estructuras básicas (listas, tuplas, diccionarios)</li>
+                            <li style="text-align: justify;">Programación orientada a objetos con clases, herencia y __init__</li>
+                        </ul>
+                    <div class="exercise-preview">
+                        <img src="imgsem14_2.jpg" alt="Imagen de la semana" class="imgsem1">
+                    </div>
+                </div>
+
+
+                <div class="ejercicio-item">
+                    <h3>3. Desarrollo con Flask</h3>
+                        <ul class="listar">
+                            <li style="text-align: justify;">Instalación de Flask y creación de rutas con @app.route.</li>
+                            <li style="text-align: justify;">Manejo de formularios con request y renderizado con render_template.</li>
+                            <li style="text-align: justify;">Conexión a MySQL con pymysql y procesamiento de datos desde HTML.</li><br>
+                        </ul>
+                    <div class="exercise-preview">
+                        <img src="imgsem14_3.jpg" alt="Imagen de la semana" class="imgsem1">
+                    </div>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>4. Plantillas y proyecto final</h3>
+                        <ul class="listar">
+                            <li style="text-align: justify;">Creación del archivo formulario.html para insertar estudiantes.</li>
+                            <li style="text-align: justify;">Desarrollo completo: clases Persona y Estudiante, app funcional con BD integrada.</li>
+                        </ul>
+                    <div class="exercise-preview">
+                        <img src="imgsem14_4.jpg" alt="Imagen de la semana" class="imgsem1">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Ejercicios</h2> 
+            <div class="ejercicios-container">
+              
+                <div class="ejercicio-item">
+                    <h3>Ejercicios Propuestos de Desarrollo API con Spring</h3>
+                        <ul class="listar">
+                            <li style="text-align: justify;">Los ejercicios planteados tienen como objetivo 
+                                integrar conocimientos fundamentales de Python y Flask mediante la construcción
+                                progresiva de una aplicación web. Se comienza creando clases con herencia para
+                                reforzar la programación orientada a objetos, luego se desarrolla una app Flask 
+                                que registra estudiantes mediante formularios. Posteriormente, se conecta la 
+                                aplicación a una base de datos MySQL usando pymysql, y se utilizan plantillas 
+                                HTML dinámicas con Jinja2. Finalmente, se enfoca en mejorar la interfaz y validar
+                                los datos enviados desde el formulario.
+                             </li><br>
+                        </ul>
+                    <div class="exercise-preview">
+                        <a href="semana14.pdf" class="btn">Flask y Python</a>
+                        <a href="https://github.com/ALEXIScrazy78/FlaskandPython/tree/main/proy_estudiante" class="btn">Registro de Estudiantes </a>
+                        <div class="exercise-preview">
+                        <img src="imgsem14_5.jpg" alt="Imagen de la semana" class="imgsem1">
+                        <img src="imgsem14_6.jpg" alt="Imagen de la semana" class="imgsem1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Conclusión</h2>
+            <div class="reflection">
+                <p>La práctica demuestra cómo usar Flask como alternativa ligera a frameworks
+                    más complejos, facilitando el desarrollo rápido de aplicaciones web con Python. 
+                    La conexión a MySQL y el uso de Jinja2 permite construir sistemas web funcionales 
+                    y bien estructurados. Flask ofrece simplicidad sin sacrificar potencia, ideal para
+                    estudiantes y proyectos MVP.
+                </p>
+            </div>
+
+            <h2 class="section-title">Reflexión </h2>
+            <div class="reflection">
+                <p>La práctica demuestra cómo usar Flask como alternativa ligera a frameworks más complejos,
+                    facilitando el desarrollo rápido de aplicaciones web con Python. La conexión a MySQL y el
+                     uso de Jinja2 permite construir sistemas web funcionales y bien estructurados. Flask ofrece 
+                     simplicidad sin sacrificar potencia, ideal para estudiantes y proyectos MVP.
+                </p>
+            </div>
+
+
+            <h2 class="section-title">Recursos Utilizados</h2>
+            <div class="resources">
+                <ul>
+                    <li class="recurso-link">
+                        <a href="semana14.pdf" class="recurso-btn">
+                          <i class="fab fa-github"></i> Ejercicios e información de Flask y Python
+                        </a>
+                        <span class="recurso-desc">- Material presentado por el Ing. Jaime Suasnabar Terrel</span>
+                    </li>
+
+                    <li class="recurso-link">
+                        <a href="hhttps://flask.palletsprojects.com/en/stable/" class="recurso-btn">
+                          <i class="fab fa-github"></i> Flask Documentation
+                        </a>
+                        <span class="recurso-desc">- Flask</span>
+                    </li>
+
+                    <li class="recurso-link">
+                        <a href="https://www.python.org/" class="recurso-btn">
+                          <i class="fab fa-github"></i> Descargar Python
+                        </a>
+                        <span class="recurso-desc">- Python</span>
+                    </li>
+
+                    <li class="recurso-link">
+                        <a href="https://www.apachelounge.com/download/" class="recurso-btn">
+                          <i class="fab fa-github"></i>  Apache Lounge
+                        </a>
+                        <span class="recurso-desc">- Apache</span>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="navigation-buttons">
+                <a href="../Semana13/Sem_13.html" class="btn">← Semana Anterior</a>
+                <a href="../Semana15/Sem_15.html" class="btn">Semana Siguiente →</a>
+                </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="basketball-decoration"></div>
+        <p>&copy; 2025 | Todos los derechos reservados </p>
+        <p>Desarrollado por Castro Casas Alexis</p>
+    </footer>
+
+    <script src="Sem_14.js"></script>
+</body>
+</html>
