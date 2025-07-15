@@ -80,16 +80,19 @@
             if (edadInput && resultadoElemento) {
                 const edad = parseInt(edadInput.value, 10); // Parse to integer
 
-                if (isNaN(edad) || edad < 0) {
+                if (isNaN(edad) || edad <= 0) {
                     resultadoElemento.textContent = 'Por favor, ingresa una edad válida.';
                     resultadoElemento.style.color = 'red';
-                } else if (edad >= 18) {
-                    resultadoElemento.textContent = '¡Eres mayor de edad!';
+                } else if (edad < 18) {
+                    resultadoElemento.textContent = '¡Eres menor de edad!';
                     resultadoElemento.style.color = 'green';
-                } else {
-                    resultadoElemento.textContent = 'Eres menor de edad.';
+                } else if (edad < 150 & edad >=18){
+                    resultadoElemento.textContent = 'Eres mayor de edad.';
                     resultadoElemento.style.color = 'orange';
+                } else{
+                    resultadoElemento.textContent = 'No te creo esa edad';
                 }
+                    
             }
         }
     </script>
