@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 15</title>
+    <link rel="stylesheet" href="Sem_15.css">
+    <link rel="icon" type="image/png" href="../spideman.png">
+</head>
+<body>
+
+    <button id="scrollToTopBtn" class="btn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99;">
+        ⬆️ Subir
+    </button>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <div class="basketball-decoration"></div>
+            <span>Semana 15</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../index.html#about">Sobre Mí</a></li>
+            <li><a href="../index.html#weeks">Semanas</a></li>
+            <li><a href="../index.html#projects">Proyectos</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>Semana 15: Desarrollo de Sistemas Inteligentes con Python, Flask y Modelos de Lenguaje (LLM)</h1>
+        <h3>¿Qué hemos aprendido?</h3><br>
+        <p>
+            Se desarrollaron conocimientos fundamentales y prácticos para la construcción de sistemas inteligentes usando Python. 
+            Se aplicaron técnicas clásicas como reglas IF-THEN, lógica difusa y se integraron modelos de lenguaje a gran escala (LLM) 
+            con interfaces web dinámicas. Además, se fortalecieron conceptos de programación orientada a objetos, toma de decisiones
+            y diseño de aplicaciones interactivas.
+        </p>
+    </header>
+
+    <div class="container">
+        <div class="week-content">
+            <div class="week-info">
+                <div class="info-card">
+                    <h3>Objetivos de Aprendizaje</h3>
+                    <ul>
+                        <li>Diseñar sistemas inteligentes simples aplicando estructuras de decisión tipo IF-THEN.</li>
+                        <li>Implementar lógica difusa para la toma de decisiones con variables lingüísticas.</li>
+                        <li>Desarrollar una interfaz web con Flask que interactúe con un modelo de lenguaje LLM (LLaMA 3).</li>
+                        <li>Reforzar la creación de clases, herencia y lógica condicional en Python.</li>
+                        <li>Comprender el ciclo completo de integración de un modelo IA en un sistema web personalizado.</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Tecnologías Utilizadas</h3>
+                    <ul>
+                        <li><b>Lenguaje: </b>Python 3.9+</li>
+                        <li><b>Framework: </b>Flask</li>
+                        <li><b>Bibliotecas: </b>transformers, torch – Hugging Face, scikit-fuzzy – Control difuso</li>
+                        <li><b>Modelos de IA: </b>LLaMA 3 (Meta, vía Hugging Face)</li>
+                        <li><b>Frontend: </b>HTML, CSS, JavaScript</li>
+                        <li><b>Gestor de paquetes: </b>pip</li>
+                        <li><b>Herramientas adicionales: </b>Git, entorno local con navegador, .env</li>
+                    </ul>
+                </div>
+            </div>
+
+           <div class="image-container">
+                <img src="imgsem15.jpg" alt="Imagen de la semana" class="imgsem1">
+            </div>
+
+            <h2 class="section-title">¿Que se hizo?</h2>         
+
+            <div class="ejercicios-container">
+              
+                <div class="ejercicio-item">
+                    <h3>1. Configuración de entorno para sistemas expertos:</h3>
+                        <ul class="listar">
+                            <li style="text-align: justify;">Creación de carpetas y archivos Python (main.py)</li>
+                            <li style="text-align: justify;">Programación de clases (Persona, Paciente)</li>
+                            <li style="text-align: justify;">Implementación de lógica condicional con funciones de diagnóstico.</li>
+                        </ul>
+                    <div class="exercise-preview">
+                        <img src="imgsem15_1.jpg" alt="Imagen de la semana" class="imgsem1">
+                    </div>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>2. Instalación y uso de lógica difusa:</h3>
+                        <ul class="listar">
+                            <li style="text-align: justify;">Instalación de scikit-fuzzy con pip.</li>
+                            <li style="text-align: justify;">Definición de conjuntos difusos para temperatura y potencia.</li>
+                            <li style="text-align: justify;">Simulación de sistema climatizador.</li>
+                        </ul>
+                    <div class="exercise-preview">
+                        <img src="imgsem15_2.jpg" alt="Imagen de la semana" class="imgsem1">
+                    </div>
+                </div>
+
+
+                <div class="ejercicio-item">
+                    <h3>3. Configuración de entorno para LLM:</h3>
+                        <ul class="listar">
+                            <li style="text-align: justify;">Instalación de transformers, flask, torch, python-dotenv.</li>
+                            <li style="text-align: justify;">Descarga y carga del modelo LLaMA 3 desde Hugging Face.</li>
+                            <li style="text-align: justify;">Creación de estructura de proyecto Flask con HTML, CSS y JS.</li>
+                            <li style="text-align: justify;">Definición de rutas, renderización y manejo de POST request.</li><br>
+                        </ul>
+                    <div class="exercise-preview">
+                        <img src="imgsem15_3.jpg" alt="Imagen de la semana" class="imgsem1">
+                    </div>
+                </div>
+            </div>
+
+            <h2 id="proyecto" class="section-title">Ejercicios</h2> 
+            <div class="ejercicios-container">
+              
+                <div class="ejercicio-item">
+                    <h3>Ejercicios Propuestos de Desarrollo API con Spring</h3>
+                        <ul class="listar">
+                            <li style="text-align: justify;"> El primero consistió en la creación de un sistema experto simple 
+                                para diagnóstico médico usando clases en Python y reglas condicionales IF-THEN. El segundo 
+                                implementó un sistema de climatización inteligente utilizando lógica difusa con la biblioteca 
+                                scikit-fuzzy, permitiendo ajustar la potencia del aire acondicionado según la temperatura. 
+                                Finalmente, el tercer ejercicio integró el modelo de lenguaje LLaMA 3 en una aplicación web 
+                                desarrollada con Flask, permitiendo al usuario interactuar con el modelo a través de una interfaz HTML dinámica.
+                             </li><br>
+                        </ul>
+                    <div class="exercise-preview">
+                        <a href="semana15.pdf" class="btn">Sistemas Inteligentes</a>
+                        <div class="exercise-preview">
+                        <img src="imgsem15_4.jpg" alt="Imagen de la semana" class="imgsem1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Conclusión</h2>
+            <div class="reflection">
+                <p>La práctica permitió desarrollar desde cero tres enfoques complementarios de inteligencia artificial: 
+                    reglas lógicas, lógica difusa y modelos generativos avanzados. Se integró la teoría de sistemas 
+                    inteligentes con el desarrollo real de aplicaciones, fortaleciendo tanto habilidades técnicas como de razonamiento lógico.
+                </p>
+            </div>
+
+            <h2 class="section-title">Reflexión </h2>
+            <div class="reflection">
+                <p>Esta semana demostró cómo es posible construir soluciones inteligentes completas con herramientas de código abierto. 
+                    Desde un diagnóstico médico básico hasta un chatbot con LLaMA 3, se evidencia cómo la IA puede adaptarse a distintos
+                     niveles de complejidad. La práctica fomenta pensamiento algorítmico, integración de IA moderna y diseño orientado al usuario.
+                </p>
+            </div>
+
+
+            <h2 class="section-title">Recursos Utilizados</h2>
+            <div class="resources">
+                <ul>
+                    <li class="recurso-link">
+                        <a href="semana15.pdf" class="recurso-btn">
+                          <i class="fab fa-github"></i> Ejercicios e información de Desarrollo de Python, Flask y Modelos de Lenguaje
+                        </a>
+                        <span class="recurso-desc">- Material presentado por el Ing. Jaime Suasnabar Terrel</span>
+                    </li>
+
+                    <li class="recurso-link">
+                        <a href="https://huggingface.co/" class="recurso-btn">
+                          <i class="fab fa-github"></i> Modelos de Hugging Face
+                        </a>
+                        <span class="recurso-desc">- Hugging Face</span>
+                    </li>
+
+                    <li class="recurso-link">
+                        <a href="https://pythonhosted.org/scikit-fuzzy/" class="recurso-btn">
+                          <i class="fab fa-github"></i> Scikit-Fuzzy
+                        </a>
+                        <span class="recurso-desc">- Scikit</span>
+                    </li>
+
+                    <li class="recurso-link">
+                        <a href="https://flask.palletsprojects.com/" class="recurso-btn">
+                          <i class="fab fa-github"></i>  Documentación Flask
+                        </a>
+                        <span class="recurso-desc">- Flask</span>
+                    </li>
+                    <li class="recurso-link">
+                        <a href="https://huggingface.co/docs/transformers" class="recurso-btn">
+                          <i class="fab fa-github"></i>  Transformers (Hugging Face)
+                        </a>
+                        <span class="recurso-desc">- Hugging Face</span>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="navigation-buttons">
+                <a href="../Semana14/Sem_14.html" class="btn">← Semana Anterior</a>
+                <a href="../index.html" class="btn">Ir al Inicio</a>
+                </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="basketball-decoration"></div>
+        <p>&copy; 2025 | Todos los derechos reservados </p>
+        <p>Desarrollado por Castro Casas Alexis</p>
+    </footer>
+
+    <script src="Sem_15.js"></script>
+</body>
+</html>
